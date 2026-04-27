@@ -10,9 +10,7 @@ https://dissertation-app.netlify.app
 
 ## Scan the QR code to open the link
 
-<p align="center">
 <img src="./public/qr-code.png" width="200" alt="QR code"/>
-</p>
 
 ---
 
