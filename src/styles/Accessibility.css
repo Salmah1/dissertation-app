@@ -21,6 +21,7 @@
 .accessibility-toggle:hover {
   background: var(--primary-hover);
   color: var(--primary-light);
+  transform: scale(1.1);
 }
 
 .accessibility-menu {

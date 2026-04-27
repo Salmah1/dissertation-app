@@ -4,9 +4,15 @@ An interactive web application designed to help non-expert users explore how AI 
 
 ---
 
-## Netlify Link
+## Netlify
 
 https://dissertation-app.netlify.app
+
+## Scan the QR code to open the link
+
+<p align="center">
+<img src="./public/qr-code.png" width="200" alt="QR code"/>
+</p>
 
 ---
 
@@ -45,7 +51,7 @@ Uses the Gemini API to visualise user input about AI in social care, showing use
 
 - Google Gemini API (@google/genai)
 
-### Deployment 
+### Deployment
 
 - Netlify
 - Render

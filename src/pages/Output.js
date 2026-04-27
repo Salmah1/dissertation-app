@@ -212,6 +212,21 @@ function Output({ goNext, ...accessibilityProps }) {
             </div>
 
             <div className="output-container">
+              {loading ? (
+                <div className="info-section output-loading">
+                  <div className="guess-icon">💭</div>
+                  <p className="loading-text" aria-live="polite">
+                    AI is creating your visual...
+                  </p>
+                </div>
+              ) : generatedImage ? (
+                <img
+                  src={generatedImage}
+                  className="output-image"
+                  alt="AI-generated visual from idea"
+                />
+              ) : null}
+
               {userIdea && (
                 <div className="output-section">
                   <h3>Your idea</h3>
@@ -223,19 +238,6 @@ function Output({ goNext, ...accessibilityProps }) {
                   </div>
                 </div>
               )}
-
-              {/* Show loading text or image */}
-              {loading ? (
-                <p className="loading-text" aria-live="polite">
-                  AI is creating your visual...
-                </p>
-              ) : generatedImage ? (
-                <img
-                  src={generatedImage}
-                  className="output-image"
-                  alt="AI-generated visual from idea"
-                />
-              ) : null}
             </div>
 
             <div className="info-section">
