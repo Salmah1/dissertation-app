@@ -1,0 +1,207 @@
+/* High Contrast Layout */
+.high-contrast {
+  /* Backgrounds */
+  --bg-page: #000;
+  --bg-card: #000;
+  --bg-surface: #111;
+  --bg-header: #000;
+
+  /* Borders */
+  --border-default: #fff;
+
+  /* Primary */
+  --primary: #ffff00;
+  --primary-hover: #fff36b;
+  --primary-light: #222;
+
+  /* Text */
+  --text-heading: #fff;
+  --text-body: #fff;
+  --text-muted: #ddd;
+  --text-light: #fff;
+
+  /* Feedback */
+  --correct: #00ff66;
+  --correct-bg: #002b12;
+
+  --incorrect: #ff5c5c;
+  --incorrect-bg: #330000;
+
+  --star: #ffff00;
+  --star-unfilled: #777;
+}
+
+.high-contrast .card-header {
+  /* border-bottom: 1px solid var(--border-default); */
+}
+
+.high-contrast .btn,
+.high-contrast .activity-step,
+.high-contrast .progress-pill,
+.high-contrast .option-label {
+  color: var(--bg-page);
+}
+
+.high-contrast .progress-fill,
+.high-contrast .progress-pill {
+  background: var(--primary);
+}
+
+.high-contrast .btn:not(:disabled):hover,
+.high-contrast .secondary-btn:hover {
+  background: var(--primary-hover);
+  color: var(--bg-page);
+  box-shadow: none;
+}
+
+.high-contrast .accessibility-toggle {
+  background: var(--primary);
+  color: var(--bg-page);
+  border: 1px solid var(--primary);
+}
+
+.high-contrast .accessibility-toggle:hover {
+  background: var(--primary-hover);
+  color: var(--bg-page);
+  border-color: var(--primary-hover);
+}
+
+.high-contrast .btn:disabled {
+  background: var(--text-muted);
+  color: var(--bg-page);
+  opacity: 1;
+}
+
+.high-contrast .info-section,
+.high-contrast .question-box,
+.high-contrast .option,
+.high-contrast .output-idea,
+.high-contrast .output-textarea,
+.high-contrast .output-section {
+  background: var(--bg-surface);
+  color: var(--text-body);
+  border: 1px solid var(--border-default);
+}
+
+.high-contrast .info-section h3,
+.high-contrast .accessibility-title {
+  color: var(--text-light);
+}
+
+.high-contrast .option:not(:disabled):hover,
+.high-contrast .output-idea:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+.high-contrast .option:not(:disabled):hover .option-text,
+.high-contrast .option:not(:disabled):hover .option-icon {
+  color: var(--text-body);
+}
+
+.high-contrast .option-label {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.high-contrast .correct,
+.high-contrast .breakdown-circle.correct {
+  background: var(--correct-bg);
+  border: 2px solid var(--correct);
+}
+
+.high-contrast .incorrect,
+.high-contrast .breakdown-circle.incorrect {
+  background: var(--incorrect-bg);
+  border: 2px solid var(--incorrect);
+}
+
+.high-contrast .correct-box {
+  background: var(--correct-bg);
+  border-color: var(--correct);
+}
+
+.high-contrast .incorrect-box {
+  background: var(--incorrect-bg);
+  border-color: var(--incorrect);
+}
+
+.high-contrast .feedback-heading,
+.high-contrast .feedback-text {
+  color: var(--text-body);
+}
+
+.high-contrast .final-feedback {
+  background: var(--bg-surface);
+  border: 1px solid var(--primary);
+}
+
+.high-contrast .logo,
+.high-contrast .final-logo {
+  background: var(--primary);
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.high-contrast .accessibility-menu {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+}
+
+.high-contrast .accessibility-divider {
+  background: var(--border-default);
+}
+
+.high-contrast .accessibility-menu button {
+  background: var(--bg-surface);
+  color: var(--text-body);
+  border: 1px solid var(--border-default);
+}
+
+.high-contrast .accessibility-menu button:hover,
+.high-contrast .accessibility-menu button.active-accessibility {
+  background: var(--primary);
+  color: var(--bg-page);
+  border-color: var(--primary);
+}
+
+.high-contrast .accessibility-menu button.active-accessibility:hover {
+  background: var(--primary-hover);
+  color: var(--bg-page);
+  border-color: var(--primary-hover);
+}
+
+.high-contrast .text-btn {
+  color: var(--text-body);
+}
+
+.high-contrast .text-btn:hover {
+  color: var(--primary);
+}
+
+.high-contrast .secondary-btn {
+  background: var(--bg-card);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.high-contrast .output-image {
+  border-color: var(--border-default);
+}
+
+.high-contrast .output-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.high-contrast .output-textarea:hover {
+  border-color: var(--primary);
+}
+
+.high-contrast .output-textarea:focus,
+.high-contrast .output-textarea:focus-visible {
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: none;
+}

@@ -1,0 +1,72 @@
+/* Guess Results Layout */
+.guess-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-default);
+  font-size: 0.9rem;
+}
+
+.guess-row:last-child {
+  border-bottom: none;
+}
+
+.guess-label {
+  color: var(--text-body);
+  text-align: left;
+}
+
+.guess-row strong {
+  color: var(--primary);
+  font-weight: 800;
+  text-align: right;
+}
+
+.guess-section {
+  padding-bottom: 18px;
+}
+
+.feedback-btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.guess-feedback-btn {
+  min-width: 92px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: var(--bg-card);
+  border: none;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guess-feedback-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: scale(1.03);
+}
+
+.guess-feedback-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.feedback-message {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.guess-icon {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}

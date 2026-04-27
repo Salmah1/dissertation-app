@@ -1,0 +1,86 @@
+/* Accessibility Layout */
+.accessibility-panel {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 50;
+}
+
+.accessibility-toggle {
+  background: var(--primary-light);
+  border: 1px solid var(--accent);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+}
+
+.accessibility-toggle:hover {
+  background: var(--primary-hover);
+  color: var(--primary-light);
+}
+
+.accessibility-menu {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  width: 170px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: center;
+}
+
+.accessibility-title {
+  margin: 0 0 4px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.accessibility-divider {
+  height: 1px;
+  background: var(--border-default);
+  margin: 2px 0;
+}
+
+.accessibility-menu button {
+  width: 100%;
+  border: 1px solid transparent;
+  background: var(--bg-surface);
+  color: var(--text-body);
+  border-radius: 12px;
+  padding: 9px 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+}
+
+.accessibility-menu button:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.accessibility-menu button.active-accessibility {
+  background: var(--primary);
+  color: var(--bg-card);
+  border-color: var(--primary);
+}
+
+.accessibility-menu button.active-accessibility:hover {
+  background: var(--primary-hover);
+  color: var(--bg-card);
+  border-color: var(--primary-hover);
+}

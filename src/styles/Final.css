@@ -1,0 +1,95 @@
+/* Final Layout */
+.final-logo {
+  width: 40px;
+}
+
+.final-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.secondary-btn {
+  width: auto;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--primary);
+  background: var(--bg-card);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn);
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.text-btn:hover {
+  color: var(--primary);
+}
+
+.secondary-btn,
+.text-btn {
+  line-height: 1.4;
+}
+
+.row-item .final-text {
+  margin-top: 6px;
+}
+
+.final-section {
+  text-align: left;
+}
+
+.final-section .card-icon {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.final-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.final-stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 2.5rem;
+}
+
+.final-stars span {
+  color: var(--star-unfilled);
+  line-height: 1;
+}
+
+.final-stars span.filled {
+  color: var(--star);
+}
+
+.final-feedback {
+  background: var(--bg-header);
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.final-feedback strong {
+  color: var(--primary);
+}
