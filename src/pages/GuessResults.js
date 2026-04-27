@@ -35,9 +35,9 @@ function GuessResults({
     // Fetch AI guess from backend
     const fetchGuess = async () => {
       try {
-        const res = await fetch("http://localhost:3001/guess", {
+        const res = await fetch("https://dissertation-app.onrender.com/guess", {
           method: "POST",
-          headers: { "Content-type": "application/json" },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ answers }),
         });
 

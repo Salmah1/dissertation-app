@@ -17,6 +17,13 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
+// Start server
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // AI image generation route
 app.post("/output", async (req, res) => {
   const userIdea = req.body.prompt;
@@ -87,8 +94,12 @@ app.post("/output", async (req, res) => {
 app.post("/guess", async (req, res) => {
   const answers = req.body.answers;
 
+  const answersText = answers.map((a) => a.selectedAnswer).join(", ");
+
   // Force AI to return clean JSON only
-  const cleanedPrompt = `Based only on these answers: ${answers.join(", ")}. Return only valid JSON in exactly this format: {"age": "30-40", "hobby": "Gaming", "personality": "Adventurous"} No markdown. No explanation.`;
+  const cleanedPrompt = `Based only on these answers: ${answersText}. 
+  Return only valid JSON in exactly this format: {"age": "30-40", "hobby": "Gaming", 
+  "personality": "Adventurous"}. No markdown. No explanation.`;
 
   console.log("Guess request received:", answers);
 
@@ -124,9 +135,4 @@ app.post("/guess", async (req, res) => {
       personality: "Thoughtful",
     });
   }
-});
-
-// Start server
-app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
 });

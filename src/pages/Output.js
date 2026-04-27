@@ -52,7 +52,7 @@ function Output({ goNext, ...accessibilityProps }) {
       }, 10000);
 
       // Send request to backend
-      const res = await fetch("http://localhost:3001/output", {
+      const res = await fetch("https://dissertation-app.onrender.com/output", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userIdea }),

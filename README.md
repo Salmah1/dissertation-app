@@ -4,6 +4,12 @@ An interactive web application designed to help non-expert users explore how AI 
 
 ---
 
+## Netlify Link
+
+https://dissertation-app.netlify.app
+
+---
+
 ## Features
 
 ### AI Quiz
