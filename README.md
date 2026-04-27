@@ -45,6 +45,11 @@ Uses the Gemini API to visualise user input about AI in social care, showing use
 
 - Google Gemini API (@google/genai)
 
+### Deployment 
+
+- Netlify
+- Render
+
 ---
 
 ## Getting Started
