@@ -43,14 +43,7 @@ function Output({ goNext, ...accessibilityProps }) {
     setError("");
     setGeneratedImage("");
 
-    let timeout;
-
     try {
-      timeout = setTimeout(() => {
-        setGeneratedImage("/fallback-image.png");
-        setLoading(false);
-      }, 10000);
-
       // Send request to backend
       const res = await fetch("https://dissertation-app.onrender.com/output", {
         method: "POST",
@@ -64,7 +57,6 @@ function Output({ goNext, ...accessibilityProps }) {
 
       // Convert response to JSON
       const data = await res.json();
-      clearTimeout(timeout);
 
       if (!data.image) {
         throw new Error("No image returned");
@@ -73,7 +65,6 @@ function Output({ goNext, ...accessibilityProps }) {
       // Save returned image to state
       setGeneratedImage(data.image);
     } catch (error) {
-      clearTimeout(timeout);
       console.error("Error:", error.message);
       setGeneratedImage("/fallback-image.png");
     }

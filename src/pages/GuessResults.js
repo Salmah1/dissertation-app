@@ -26,12 +26,6 @@ function GuessResults({
     if (hasFetched.current) return;
     hasFetched.current = true;
 
-    // Fallback timeout
-    const timeout = setTimeout(() => {
-      setResult(fallbackResult);
-      setLoading(false);
-    }, 10000);
-
     // Fetch AI guess from backend
     const fetchGuess = async () => {
       try {
@@ -46,7 +40,6 @@ function GuessResults({
         }
 
         const data = await res.json();
-        clearTimeout(timeout);
 
         // Validate response before using it
         if (data.age && data.hobby && data.personality) {
@@ -56,7 +49,6 @@ function GuessResults({
         }
       } catch (error) {
         console.log("Error:", error.message);
-        clearTimeout(timeout);
         setResult(fallbackResult);
       }
       setLoading(false);
