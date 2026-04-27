@@ -52,9 +52,7 @@ cd dissertation-app
 
 ### 2. Set up environment variables
 
-```md
 Create a .env file inside the server folder:
-```
 
 ```bash
 GEMINI_API_KEY=api_key
@@ -62,18 +60,14 @@ GEMINI_API_KEY=api_key
 
 ### 3. Install and run
 
-```md
 Frontend:
-```
 
 ```bash
 npm install
 npm start
 ```
 
-```md
 Backend:
-```
 
 ```bash
 cd server
@@ -81,8 +75,6 @@ npm install
 node index.js
 ```
 
-```md
 ### Author
 
 Salmah Abdullahi
-```
