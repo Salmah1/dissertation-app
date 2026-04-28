@@ -1,6 +1,6 @@
 # AI in Social Care
 
-An interactive web application designed to help non-expert users explore how AI works in social care settings.
+An interactive web application designed to help non-expert users explore how AI works.
 
 ---
 
@@ -61,7 +61,7 @@ Uses the Gemini API to visualise user input about AI in social care, showing use
 ### 1. Clone the repository
 
 ```bash
-git clone https://git.cardiff.ac.uk/c23048618/dissertation-app.git
+git clone https://github.com/Salmah1/dissertation-app.git
 cd dissertation-app
 ```
 
