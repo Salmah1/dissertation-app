@@ -308,3 +308,9 @@ select {
     justify-content: center;
   }
 }
+
+@media (max-width: 600px) {
+  .intro-content p {
+    padding: 0 30px 0;
+  }
+}
