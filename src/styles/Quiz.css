@@ -1,24 +1,24 @@
 /* Quiz Layout */
 .card-container {
+  position: relative;
   width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 36px 24px 32px;
+  padding: 82px 24px 44px;
   box-sizing: border-box;
   background: var(--bg-card);
   text-align: center;
 }
 
 .card-row {
-  position: relative;
-  display: grid;
+  position: static;
+  display: block;
   grid-template-columns: 1fr auto 1fr;
   align-items: start;
-  gap: 12px;
-  margin-bottom: 16px;
 }
 
 .card-title {
+  position: absolute;
+  top: 28px;
+  left: 28px;
   text-align: left;
 }
 
@@ -29,12 +29,20 @@
 }
 
 .card-row .accessibility-panel {
-  position: static;
-  justify-self: end;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+
+.card-row .progress-pill {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .score {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 0.8rem;
   color: var(--text-light);
   font-weight: 700;
@@ -42,17 +50,14 @@
 
 /* Question counter + progress bar */
 .progress-pill {
-  margin: 0;
-  font-size: 0.75rem;
-  padding: 7px 15px;
+  font-size: 0.7rem;
+  padding: 6px 14px;
   border-radius: 999px;
   background: var(--primary-light);
   color: var(--primary);
   border: 1px solid var(--accent);
   text-transform: uppercase;
   font-weight: 800;
-  display: inline-block;
-  white-space: nowrap;
 }
 
 .progress-bar {
@@ -60,7 +65,7 @@
   background: var(--border-default);
   border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin: 8px 0 22px;
 }
 
 .progress-fill {
@@ -80,7 +85,7 @@
   border: 1px solid var(--border-default);
   text-align: center;
   box-shadow: var(--shadow-soft);
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
 .question-icon {
@@ -97,8 +102,7 @@
 .options {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 22px;
 }
 
 .option {
@@ -183,7 +187,7 @@
   box-sizing: border-box;
   text-align: left;
   animation: fadeIn 0.3s ease;
-  margin-bottom: 18px;
+  margin-top: 22px;
 }
 
 .feedback-box h3 {
@@ -213,8 +217,8 @@
 .results-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  gap: 14px;
 }
 
 .results-container .card-row,

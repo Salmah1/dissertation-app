@@ -91,7 +91,7 @@ function Output({ goNext, ...accessibilityProps }) {
               <h2>What could social care look like?</h2>
             </div>
 
-            <div className="card-content">
+            <div className="card-content intro-content">
               <p>
                 Describe an idea for the future of social care and watch the AI
                 bring it to life instantly.
@@ -121,14 +121,16 @@ function Output({ goNext, ...accessibilityProps }) {
 
             {/* <div className="progress-pill">Generate visual</div> */}
 
-            <div className="question-box output-box">
+            <div className="question-box">
               <span className="question-icon">💭</span>
               <span className="question-text">
                 What could AI in social care look like to you?
               </span>
             </div>
 
-            <h3 className="output-title">Need some inspiration? Tap one:</h3>
+            <h3 className="output-title output-select">
+              Need some inspiration? Tap one:
+            </h3>
 
             {/* Example ideas for user to select */}
             <div className="output-ideas">
@@ -168,7 +170,7 @@ function Output({ goNext, ...accessibilityProps }) {
               </button>
             </div>
 
-            <h3 className="output-title">Or type your own idea:</h3>
+            <h3 className="output-title output-type">Or type your own idea:</h3>
 
             <textarea
               className="output-textarea"
@@ -200,7 +202,7 @@ function Output({ goNext, ...accessibilityProps }) {
       {/* Output page */}
       {step === "output" && (
         <div className="screen">
-          <div className="card-container results-container">
+          <div className="card-container">
             <div className="card-row">
               <div className="card-title">
                 <div className="left">💭 AI Visuals</div>

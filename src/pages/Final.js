@@ -21,7 +21,7 @@ function Final({
           <AccessibilityPanel {...accessibilityProps} />
         </div>
 
-        <div className="info-section final-section">
+        <div className="info-section final-section final-container">
           <h3>Thank you for exploring AI with us!</h3>
           <div className="row-item">
             <span>🤖</span>
@@ -32,7 +32,7 @@ function Final({
           </div>
         </div>
 
-        <div className="info-section">
+        <div className="info-section final-container">
           <h3>Your quiz score</h3>
 
           <div className="final-row">
@@ -47,7 +47,7 @@ function Final({
           </div>
         </div>
 
-        <div className="info-section">
+        <div className="info-section final-container">
           <h3>What we learned today</h3>
 
           <div className="row-item">
@@ -108,7 +108,7 @@ function Final({
 
           {/* Link to feedback form */}
           <button
-            className="btn"
+            className="btn primary-btn"
             onClick={() =>
               window.open(
                 "https://forms.gle/9L4czy9U1x6vM9Mp9",

@@ -7,13 +7,13 @@ function GuessIntro({ goToQuiz, ...accessibilityProps }) {
       <div className="card full-card">
         <div className="card-header">
           <AccessibilityPanel {...accessibilityProps} />
-
           <span className="progress-pill">Activity 2 of 3</span>
+
           <div className="card-icon">🔮</div>
           <h2>Can AI read your mind?</h2>
         </div>
 
-        <div className="card-content">
+        <div className="card-content intro-content">
           <p>
             Answer 3 simple "this or that" questions and see what the AI can
             guess about you.

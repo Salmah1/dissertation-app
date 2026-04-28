@@ -31,10 +31,6 @@
   --star-unfilled: #777;
 }
 
-.high-contrast .card-header {
-  /* border-bottom: 1px solid var(--border-default); */
-}
-
 .high-contrast .btn,
 .high-contrast .activity-step,
 .high-contrast .progress-pill,

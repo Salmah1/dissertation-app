@@ -77,14 +77,14 @@ function GuessResults({
         </div>
 
         {loading ? (
-          <div className="info-section">
+          <div className="info-section final-container">
             <div className="guess-icon">🔮</div>
             <p className="loading-text" aria-live="polite">
               AI is looking at your answers...
             </p>
           </div>
         ) : (
-          <div className="info-section">
+          <div className="info-section final-container">
             <h3>AI guessed</h3>
 
             <div className="guess-row">
@@ -104,7 +104,7 @@ function GuessResults({
           </div>
         )}
 
-        <div className="info-section">
+        <div className="info-section final-container">
           <h3>Why did the AI guess this?</h3>
 
           <div className="row-item">
@@ -117,7 +117,7 @@ function GuessResults({
         </div>
 
         {/* Feedback section */}
-        <div className="info-section guess-section">
+        <div className="info-section guess-section final-container">
           <h3>Was the AI right?</h3>
 
           {!feedback ? (

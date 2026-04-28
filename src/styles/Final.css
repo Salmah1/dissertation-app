@@ -21,6 +21,7 @@
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
+  margin-top: 22px;
 }
 
 .secondary-btn:hover {
@@ -36,6 +37,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
+  margin-bottom: 22px;
 }
 
 .text-btn:hover {
@@ -92,4 +94,12 @@
 
 .final-feedback strong {
   color: var(--primary);
+}
+
+.final-container {
+  margin-bottom: 22px;
+}
+
+.final-actions .primary-btn {
+  margin: 10px;
 }

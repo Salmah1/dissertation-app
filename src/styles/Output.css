@@ -1,12 +1,7 @@
 /* Output Layout */
-.output-card > * + * {
-  margin-top: 0;
-}
-
 .output-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
 
 .output-card .card-row,
@@ -20,18 +15,22 @@
   align-self: center;
 }
 
-.output-card .quiz-header {
-  margin-bottom: 30px;
-}
-
 .output-title {
   width: 100%;
   font-size: 0.75rem;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   color: var(--text-light);
-  margin: 4px 0 -2px;
   text-align: left;
+  margin-bottom: 22px;
+}
+
+.output-select {
+  margin-top: 0;
+}
+
+.output-type {
+  margin-top: 22px;
 }
 
 /* Ideas */
@@ -39,8 +38,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 22px;
 }
 
 .output-idea {
@@ -91,7 +89,6 @@
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-default);
   display: block;
-  margin-bottom: 15px;
 }
 
 .error-text {
@@ -107,6 +104,7 @@
   box-sizing: border-box;
   text-align: left;
   border: 1px solid var(--border-default);
+  margin: 22px 0 22px;
 }
 
 .output-section h3 {

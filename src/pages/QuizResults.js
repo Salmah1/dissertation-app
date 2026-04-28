@@ -47,7 +47,7 @@ function QuizResults({
           <AccessibilityPanel {...accessibilityProps} />
         </div>
 
-        <div className="info-section final-section">
+        <div className="info-section final-section final-container">
           <h3>Your quiz score</h3>
 
           <div className="final-row">
@@ -67,7 +67,7 @@ function QuizResults({
           </p>
         </div>
 
-        <div className="info-section">
+        <div className="info-section final-container">
           <h3>Question breakdown</h3>
 
           <div className="breakdown-circles">
@@ -82,7 +82,7 @@ function QuizResults({
           </div>
         </div>
 
-        <div className="info-section">
+        <div className="info-section final-container">
           <h3>{message}</h3>
 
           <div className="row-item">
