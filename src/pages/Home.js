@@ -71,8 +71,6 @@ function Home({ goToQuiz, ...accessibilityProps }) {
           <button className="btn" onClick={goToQuiz}>
             Start exploring
           </button>
-
-          <p className="footer">🔒 No personal data is collected or stored.</p>
         </div>
       </div>
     </div>

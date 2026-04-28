@@ -42,85 +42,125 @@ function App() {
 
   return (
     <div className={highContrast ? "high-contrast" : ""}>
-      {/* Home */}
-      {page === "home" && (
-        <Home goToQuiz={() => setPage("quizIntro")} {...accessibilityProps} />
-      )}
+      <div className="app-layout">
+        {/* Home */}
+        {page === "home" && (
+          <Home goToQuiz={() => setPage("quizIntro")} {...accessibilityProps} />
+        )}
 
-      {/* Quiz Intro */}
-      {page === "quizIntro" && (
-        <QuizIntro goToQuiz={() => setPage("quiz")} {...accessibilityProps} />
-      )}
+        {/* Quiz Intro */}
+        {page === "quizIntro" && (
+          <QuizIntro goToQuiz={() => setPage("quiz")} {...accessibilityProps} />
+        )}
 
-      {/* Quiz */}
-      {page === "quiz" && (
-        <Quiz
-          goToResults={(finalScore, breakdown) => {
-            setScore(finalScore);
-            setQuizBreakdown(breakdown);
-            setPage("quizResults");
-          }}
-          {...accessibilityProps}
-        />
-      )}
+        {/* Quiz */}
+        {page === "quiz" && (
+          <Quiz
+            goToResults={(finalScore, breakdown) => {
+              setScore(finalScore);
+              setQuizBreakdown(breakdown);
+              setPage("quizResults");
+            }}
+            {...accessibilityProps}
+          />
+        )}
 
-      {/* Quiz Results */}
-      {page === "quizResults" && (
-        <QuizResults
-          score={score}
-          total={4}
-          breakdown={quizBreakdown}
-          goNext={() => setPage("guessIntro")}
-          {...accessibilityProps}
-        />
-      )}
+        {/* Quiz Results */}
+        {page === "quizResults" && (
+          <QuizResults
+            score={score}
+            total={4}
+            breakdown={quizBreakdown}
+            goNext={() => setPage("guessIntro")}
+            {...accessibilityProps}
+          />
+        )}
 
-      {/* Guess Intro */}
-      {page === "guessIntro" && (
-        <GuessIntro goToQuiz={() => setPage("guess")} {...accessibilityProps} />
-      )}
+        {/* Guess Intro */}
+        {page === "guessIntro" && (
+          <GuessIntro
+            goToQuiz={() => setPage("guess")}
+            {...accessibilityProps}
+          />
+        )}
 
-      {/* Guess */}
-      {page === "guess" && (
-        <Guess
-          goToResults={(answers) => {
-            setAnswers(answers);
-            setPage("guessResults");
-          }}
-          {...accessibilityProps}
-        />
-      )}
+        {/* Guess */}
+        {page === "guess" && (
+          <Guess
+            goToResults={(answers) => {
+              setAnswers(answers);
+              setPage("guessResults");
+            }}
+            {...accessibilityProps}
+          />
+        )}
 
-      {/* Guess Results */}
-      {page === "guessResults" && (
-        <GuessResults
-          answers={answers}
-          setGuessFeedback={setGuessFeedback}
-          goNext={() => setPage("output")}
-          {...accessibilityProps}
-        />
-      )}
+        {/* Guess Results */}
+        {page === "guessResults" && (
+          <GuessResults
+            answers={answers}
+            setGuessFeedback={setGuessFeedback}
+            goNext={() => setPage("output")}
+            {...accessibilityProps}
+          />
+        )}
 
-      {/* Output */}
-      {page === "output" && (
-        <Output goNext={() => setPage("final")} {...accessibilityProps} />
-      )}
+        {/* Output */}
+        {page === "output" && (
+          <Output goNext={() => setPage("final")} {...accessibilityProps} />
+        )}
 
-      {/* Final */}
-      {page === "final" && (
-        <Final
-          score={score}
-          total={4}
-          guessFeedback={guessFeedback}
-          restartApp={() => {
-            setScore(0);
-            setAnswers([]);
-            setGuessFeedback(null);
-            setPage("home");
-          }}
-          {...accessibilityProps}
-        />
-      )}
+        {/* Final */}
+        {page === "final" && (
+          <Final
+            score={score}
+            total={4}
+            guessFeedback={guessFeedback}
+            restartApp={() => {
+              setScore(0);
+              setAnswers([]);
+              setGuessFeedback(null);
+              setPage("home");
+            }}
+            {...accessibilityProps}
+          />
+        )}
+
+        {/* Footer */}
+        <footer className="footer">
+          <p className="footer-main">
+            🔒 No personal data is collected or stored
+          </p>
+
+          <p className="footer-sub">
+            {" "}
+            Educational AI prototype · AI responses may be inaccurate
+          </p>
+
+          <div className="footer-links">
+            <a
+              href="https://scaleresearchwales.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Website{" "}
+            </a>
+            <span>·</span>
+            <a
+              href="https://uk.linkedin.com/company/scale-research-wales"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              LinkedIn{" "}
+            </a>
+            <span>·</span>
+            <a href="mailto:scale@cardiff.ac.uk"> Email</a>
+          </div>
+
+          <p className="footer-copy">© 2026 Cardiff University</p>
+        </footer>
+      </div>
     </div>
   );
 }

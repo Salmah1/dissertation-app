@@ -57,6 +57,8 @@ body {
   min-height: 100vh;
   width: 100%;
   background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
 }
 
 .card,
@@ -66,6 +68,8 @@ body {
   margin: 0 auto;
   background: var(--bg-card);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-header {
@@ -183,12 +187,14 @@ textarea:focus-visible {
 
 /* Intro content */
 .card-content {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
+  /* box-sizing: border-box; */
   align-items: center;
   gap: 22px;
   margin-top: 20px;
+  flex: 1;
 }
 
 .card-content p {
@@ -221,4 +227,83 @@ textarea:focus-visible {
   .card-header {
     padding: 48px 40px 42px;
   }
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 22px 24px 26px;
+  border-top: 1px solid var(--bg-header);
+  text-align: center;
+  /* background: linear-gradient(360deg, var(--bg-page), var(--primary-light)); */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-main {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.footer-sub {
+  margin-top: 6px !important;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.footer-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin-top: 8px !important;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+}
+
+.app-layout > .screen {
+  flex: 1;
+  min-height: auto;
+}
+
+.app-layout .card,
+.app-layout .full-card {
+  min-height: auto;
 }

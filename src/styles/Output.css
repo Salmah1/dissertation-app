@@ -106,6 +106,7 @@
   padding: 18px;
   box-sizing: border-box;
   text-align: left;
+  border: 1px solid var(--border-default);
 }
 
 .output-section h3 {
