@@ -157,13 +157,4 @@
     width: 44px;
     height: 44px;
   }
-
-  .home-header .title {
-    font-size: 1.75rem;
-    margin-bottom: 20px;
-  }
-
-  .home-header .text {
-    margin-bottom: 24px;
-  }
 }

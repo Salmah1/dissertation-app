@@ -56,6 +56,7 @@ body {
 .screen {
   width: 100%;
   background: var(--bg-card);
+  margin-bottom: 20px;
 }
 
 .app-layout {
@@ -298,12 +299,6 @@ select {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  .intro-content {
-    padding: 42px 28px 64px;
   }
 }
 
