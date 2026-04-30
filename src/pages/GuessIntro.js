@@ -15,8 +15,8 @@ function GuessIntro({ goToQuiz, ...accessibilityProps }) {
 
         <div className="card-content intro-content">
           <p>
-            Answer 3 simple "this or that" questions and see what the AI can
-            guess about you.
+            Answer 3 simple "this or that" questions and see what AI can guess
+            about you.
           </p>
 
           <button className="btn" onClick={goToQuiz}>

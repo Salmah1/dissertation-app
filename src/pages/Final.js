@@ -67,9 +67,9 @@ function Final({
             <div className="row-item final-feedback">
               <span>{guessFeedback === "yes" ? "👍" : "👎"}</span>
               <p>
-                You said the AI guess was{" "}
+                You said the AI's guess was{" "}
                 <strong>
-                  {guessFeedback === "yes" ? "right" : "not quite right"}
+                  {guessFeedback === "yes" ? "accurate" : "inaccurate"}
                 </strong>
                 .
               </p>

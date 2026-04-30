@@ -105,7 +105,7 @@ function Output({
 
             <div className="card-content intro-content">
               <p>
-                Describe an idea for the future of social care and watch the AI
+                Describe an idea for the future of social care and watch AI
                 bring it to life instantly.
               </p>
 

@@ -19,7 +19,7 @@ const quizQuestions = [
     id: 2,
     questionIcon: "💊",
     question:
-      "Sarah is 82 and lives in a care home. An app reminds staff when she needs her medication. What is the AI doing?",
+      "Sarah is 82 and lives in a care home. An app reminds staff when she needs her medication. What is AI doing?",
     type: "multiple",
     options: [
       "Replacing the nurse",
@@ -38,9 +38,9 @@ const quizQuestions = [
       "An AI system tells a carer that a resident seems fine and is low risk, but the carer feels something is not right. What should they do?",
     type: "multiple",
     options: [
-      "Trust the AI because it has more data",
+      "Trust AI because it has more data",
       "Use their professional judgement and raise the concern",
-      "Ignore their instinct, the AI has already assessed it",
+      "Ignore their instinct, AI has already assessed it",
       "Wait and see what happens",
     ],
     correctAnswer: "Use their professional judgement and raise the concern",
@@ -121,7 +121,7 @@ const quizQuestions = [
       "You might discover too much new content and feel overwhelmed",
       "The apps will run out of suggestions eventually",
       "You could get stuck in a bubble and only ever see similar things",
-      "The AI could share your watch history with other users",
+      "AI could share your watch history with other users",
     ],
     correctAnswer:
       "You could get stuck in a bubble and only ever see similar things",
@@ -135,14 +135,14 @@ const quizQuestions = [
       "An AI system is used to help shortlist candidates for jobs. It keeps selecting similar types of people. What could be the problem?",
     type: "multiple",
     options: [
-      "The AI is working perfectly as intended",
-      "The AI may have learned bias from past data",
+      "It is working perfectly as intended",
+      "It may have learned bias from past data",
       "The candidates are not qualified",
       "The computer is too slow",
     ],
-    correctAnswer: "The AI may have learned bias from past data",
+    correctAnswer: "It may have learned bias from past data",
     explanation:
-      "AI learns from historical data. If that data contains bias, the AI can repeat or even worsen those patterns, leading to unfair outcomes.",
+      "AI learns from historical data. If that data contains bias, AI can repeat or even worsen those patterns, leading to unfair outcomes.",
   },
   {
     id: 10,
@@ -153,10 +153,10 @@ const quizQuestions = [
     options: [
       "AI works equally well for everyone",
       "Some people are harder to recognise",
-      "The AI may not have been trained on diverse data",
+      "AI may not have been trained on diverse data",
       "The system is broken and unusable",
     ],
-    correctAnswer: "The AI may not have been trained on diverse data",
+    correctAnswer: "AI may not have been trained on diverse data",
     explanation:
       "If AI is trained on limited or unbalanced data, it may work worse for some groups of people. That's why fair and diverse data is important.",
   },

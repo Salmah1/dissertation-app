@@ -113,7 +113,7 @@ function GuessResults({
         )}
 
         <div className="info-section final-container">
-          <h3>Why did the AI guess this?</h3>
+          <h3>Why did AI guess this?</h3>
 
           <div className="row-item">
             <span>💡</span>
@@ -151,7 +151,7 @@ function GuessResults({
               <span>{feedback === "yes" ? "👍" : "👎"}</span>
               <p>
                 {feedback === "yes"
-                  ? "Nice! Looks like the AI got a pretty good read on you."
+                  ? "Nice! Looks like AI got a pretty good read on you."
                   : "That's okay! AI is still learning, it doesn't always get it right."}
               </p>
             </div>
