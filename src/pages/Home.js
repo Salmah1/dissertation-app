@@ -44,7 +44,10 @@ function Home({ goToQuiz, goToGuess, goToOutput, ...accessibilityProps }) {
 
           <div className="time-pill">⏱️ 2-3 minutes</div>
 
-          <p className="hint">Ready? Scan the QR code or tap Start to begin</p>
+          <p className="hint">
+            Ready? Tap Start to go in order, or tap an activity below to jump
+            ahead.
+          </p>
         </div>
 
         <div className="activity-grid">
