@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/Home.css";
 import AccessibilityPanel from "../components/AccessibilityPanel";
 
-function Home({ goToQuiz, ...accessibilityProps }) {
+function Home({ goToQuiz, goToGuess, goToOutput, ...accessibilityProps }) {
   const [showQr, setShowQR] = useState(false);
 
   return (
@@ -48,23 +48,23 @@ function Home({ goToQuiz, ...accessibilityProps }) {
         </div>
 
         <div className="activity-grid">
-          <div className="activity-card">
+          <button className="activity-card" onClick={goToQuiz}>
             <div className="activity-step">1</div>
             <span className="activity-icon">🧠</span>
             <p className="activity-title">AI Quiz</p>
-          </div>
+          </button>
 
-          <div className="activity-card">
+          <button className="activity-card" onClick={goToGuess}>
             <div className="activity-step">2</div>
             <span className="activity-icon">🔮</span>
             <p className="activity-title">AI Guess</p>
-          </div>
+          </button>
 
-          <div className="activity-card">
+          <button className="activity-card" onClick={goToOutput}>
             <div className="activity-step">3</div>
             <span className="activity-icon">💭</span>
             <p className="activity-title">AI Visuals</p>
-          </div>
+          </button>
         </div>
 
         <div className="card-content">

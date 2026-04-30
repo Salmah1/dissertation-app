@@ -7,6 +7,7 @@ function QuizResults({
   score,
   total,
   breakdown,
+  restartQuiz,
   goNext,
   ...accessibilityProps
 }) {
@@ -131,6 +132,10 @@ function QuizResults({
 
         <button className="btn" onClick={goNext}>
           Continue
+        </button>
+
+        <button className="secondary-btn" onClick={restartQuiz}>
+          Replay
         </button>
       </div>
     </div>

@@ -57,19 +57,19 @@ function AccessibilityPanel({
             className={Number(fontScale) === 1 ? "active-accessibility" : ""}
             onClick={() => setFontScale(1)}
           >
-            A Normal
+            A
           </button>
           <button
             className={Number(fontScale) === 1.15 ? "active-accessibility" : ""}
             onClick={() => setFontScale(1.15)}
           >
-            A+ Large
+            A+
           </button>
           <button
             className={Number(fontScale) === 1.3 ? "active-accessibility" : ""}
             onClick={() => setFontScale(1.3)}
           >
-            A++ Larger
+            A++
           </button>
         </div>
       )}

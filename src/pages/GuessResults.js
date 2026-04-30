@@ -13,6 +13,7 @@ const fallbackResult = {
 function GuessResults({
   answers,
   setGuessFeedback,
+  restartGuess,
   goNext,
   ...accessibilityProps
 }) {
@@ -79,9 +80,16 @@ function GuessResults({
         {loading ? (
           <div className="info-section final-container">
             <div className="guess-icon">🔮</div>
+
             <p className="loading-text" aria-live="polite">
-              AI is looking at your answers...
+              AI is looking at your answers
             </p>
+
+            <div className="loading-animation" aria-hidden="true">
+              <span className="loading-icon"></span>
+              <span className="loading-icon"></span>
+              <span className="loading-icon"></span>
+            </div>
           </div>
         ) : (
           <div className="info-section final-container">
@@ -184,6 +192,14 @@ function GuessResults({
           disabled={loading || !result || !feedback}
         >
           Continue
+        </button>
+
+        <button
+          className="secondary-btn"
+          onClick={restartGuess}
+          disabled={loading || !result}
+        >
+          Replay
         </button>
       </div>
     </div>

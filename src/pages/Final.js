@@ -5,6 +5,8 @@ function Final({
   score,
   total,
   guessFeedback,
+  latestOutputIdea,
+  latestOutputImage,
   restartApp,
   ...accessibilityProps
 }) {

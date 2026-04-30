@@ -3,7 +3,13 @@ import "../styles/Output.css";
 import "../styles/Quiz.css";
 import AccessibilityPanel from "../components/AccessibilityPanel";
 
-function Output({ goNext, ...accessibilityProps }) {
+function Output({
+  goNext,
+  restartOutput,
+  setLatestOutputIdea,
+  setLatestOutputImage,
+  ...accessibilityProps
+}) {
   // Output states
   const [step, setStep] = useState("intro"); // Controls which step is shown
   const [userIdea, setUserIdea] = useState(""); // Stores the user's input
@@ -62,12 +68,18 @@ function Output({ goNext, ...accessibilityProps }) {
         throw new Error("No image returned");
       }
 
-      // Save returned image to state
+      // Save returned image and user input to state
       setGeneratedImage(data.image);
+      setLatestOutputIdea(userIdea);
+      setLatestOutputImage(data.image);
     } catch (error) {
+      // If API fails, use a fallback
       console.error("Error:", error.message);
       setGeneratedImage("/fallback-image.png");
+      setLatestOutputIdea(userIdea);
+      setLatestOutputImage("/fallback-image.png");
     }
+    // Stop loading state once response or fallback is ready
     setLoading(false);
   };
 
@@ -118,8 +130,6 @@ function Output({ goNext, ...accessibilityProps }) {
 
               <AccessibilityPanel {...accessibilityProps} />
             </div>
-
-            {/* <div className="progress-pill">Generate visual</div> */}
 
             <div className="question-box">
               <span className="question-icon">💭</span>
@@ -217,9 +227,16 @@ function Output({ goNext, ...accessibilityProps }) {
               {loading ? (
                 <div className="info-section output-loading">
                   <div className="guess-icon">💭</div>
+
                   <p className="loading-text" aria-live="polite">
-                    AI is creating your visual...
+                    AI is creating your visual
                   </p>
+
+                  <div className="loading-animation" aria-hidden="true">
+                    <span className="loading-icon"></span>
+                    <span className="loading-icon"></span>
+                    <span className="loading-icon"></span>
+                  </div>
                 </div>
               ) : generatedImage ? (
                 <img
@@ -260,6 +277,14 @@ function Output({ goNext, ...accessibilityProps }) {
               disabled={loading || !generatedImage}
             >
               Continue
+            </button>
+
+            <button
+              className="secondary-btn"
+              onClick={restartOutput}
+              disabled={loading || !generatedImage}
+            >
+              Replay
             </button>
           </div>
         </div>

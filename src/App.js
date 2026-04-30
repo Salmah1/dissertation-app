@@ -19,9 +19,35 @@ function App() {
 
   const [highContrast, setHighContrast] = useState(false);
   const [showAccessibility, setShowAccessibility] = useState(false);
-  const [fontScale, setFontScale] = useState(1);
+  const [fontScale, setFontScale] = useState(1.3);
 
   const [quizBreakdown, setQuizBreakdown] = useState([]);
+
+  const [completedSections, setCompletedSections] = useState({
+    quiz: false,
+    guess: false,
+    output: false,
+  });
+
+  const [latestOutputIdea, setLatestOutputIdea] = useState("");
+  const [latestOutputImage, setLatestOutputImage] = useState("");
+
+  const allSectionsComplete =
+    completedSections.quiz &&
+    completedSections.guess &&
+    completedSections.output;
+
+  const goToNextIncompleteSection = (updatedCompleted) => {
+    if (!updatedCompleted.quiz) {
+      setPage("quizIntro");
+    } else if (!updatedCompleted.guess) {
+      setPage("guessIntro");
+    } else if (!updatedCompleted.output) {
+      setPage("output");
+    } else {
+      setPage("final");
+    }
+  };
 
   const accessibilityProps = {
     highContrast,
@@ -45,7 +71,12 @@ function App() {
       <div className="app-layout">
         {/* Home */}
         {page === "home" && (
-          <Home goToQuiz={() => setPage("quizIntro")} {...accessibilityProps} />
+          <Home
+            goToQuiz={() => setPage("quizIntro")}
+            goToGuess={() => setPage("guessIntro")}
+            goToOutput={() => setPage("output")}
+            {...accessibilityProps}
+          />
         )}
 
         {/* Quiz Intro */}
@@ -71,7 +102,15 @@ function App() {
             score={score}
             total={4}
             breakdown={quizBreakdown}
-            goNext={() => setPage("guessIntro")}
+            restartQuiz={() => setPage("quiz")}
+            goNext={() => {
+              // Mark quiz section as complete
+              const updatedCompleted = { ...completedSections, quiz: true };
+              setCompletedSections(updatedCompleted);
+
+              // Automatically route use to the next incomplete section
+              goToNextIncompleteSection(updatedCompleted);
+            }}
             {...accessibilityProps}
           />
         )}
@@ -100,26 +139,63 @@ function App() {
           <GuessResults
             answers={answers}
             setGuessFeedback={setGuessFeedback}
-            goNext={() => setPage("output")}
+            restartGuess={() => setPage("guess")}
+            goNext={() => {
+              // Mark quiz section as complete
+              const updatedCompleted = { ...completedSections, guess: true };
+              setCompletedSections(updatedCompleted);
+              // Automatically route use to the next incomplete section
+              goToNextIncompleteSection(updatedCompleted);
+            }}
             {...accessibilityProps}
           />
         )}
 
         {/* Output */}
         {page === "output" && (
-          <Output goNext={() => setPage("final")} {...accessibilityProps} />
+          <Output
+            restartOutput={() => setPage("output")}
+            goNext={() => {
+              // Mark quiz section as complete
+              const updatedCompleted = { ...completedSections, output: true };
+              setCompletedSections(updatedCompleted);
+              // Automatically route use to the next incomplete section
+              goToNextIncompleteSection(updatedCompleted);
+            }}
+            // Store the idea and image so they can be shown on final page
+            setLatestOutputIdea={setLatestOutputIdea}
+            setLatestOutputImage={setLatestOutputImage}
+            {...accessibilityProps}
+          />
         )}
 
         {/* Final */}
-        {page === "final" && (
+        {page === "final" && allSectionsComplete && (
           <Final
             score={score}
             total={4}
             guessFeedback={guessFeedback}
+            latestOutputIdea={latestOutputIdea}
+            latestOutputImage={latestOutputImage}
             restartApp={() => {
+              // Reset all application states to initial values
               setScore(0);
               setAnswers([]);
               setGuessFeedback(null);
+              setQuizBreakdown([]);
+
+              // Clear stored output data
+              setLatestOutputIdea("");
+              setLatestOutputImage("");
+
+              // Reset section completion tracking
+              setCompletedSections({
+                quiz: false,
+                guess: false,
+                output: false,
+              });
+
+              // Go back to home screen
               setPage("home");
             }}
             {...accessibilityProps}

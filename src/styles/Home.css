@@ -73,8 +73,19 @@
 }
 
 .activity-card {
-  padding: 16px 8px;
+  padding: 16px 10px;
+  margin: 0 20px 0;
   text-align: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 18px;
+  font-family: inherit;
+}
+
+.activity-card:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
 }
 
 .activity-step {
