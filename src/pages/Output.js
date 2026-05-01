@@ -126,7 +126,7 @@ function Output({
                 <div className="left">💭 AI Visuals</div>
               </div>
 
-              <div className="progress-pill">Create visual</div>
+              <div className="progress-pill">Idea</div>
 
               <AccessibilityPanel {...accessibilityProps} />
             </div>

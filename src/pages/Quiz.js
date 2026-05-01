@@ -49,6 +49,11 @@ function Quiz({ goToResults, ...accessibilityProps }) {
     setShuffledOptions(shuffleOptions(question.options));
   }, [question]);
 
+  // Takes page back to the top after each question
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentQuestion]);
+
   // Save selected option
   const handleSelect = (option) => {
     setSelected(option);

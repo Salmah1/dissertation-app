@@ -197,7 +197,7 @@ function GuessResults({
         <button
           className="secondary-btn"
           onClick={restartGuess}
-          disabled={loading || !result}
+          disabled={loading || !result || !feedback}
         >
           Replay
         </button>

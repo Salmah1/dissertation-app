@@ -66,6 +66,10 @@ function App() {
     );
   }, [fontScale]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
+
   return (
     <div className={highContrast ? "high-contrast" : ""}>
       <div className="app-layout">

@@ -22,6 +22,7 @@
   font-size: 0.95rem;
   cursor: pointer;
   margin: 22px;
+  line-height: 1.4;
 }
 
 .secondary-btn:hover {
@@ -37,16 +38,12 @@
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
+  line-height: 1.4;
 }
 
 .text-btn:hover {
   color: var(--primary);
-}
-
-.secondary-btn,
-.text-btn {
-  line-height: 1.4;
 }
 
 .row-item .final-text {

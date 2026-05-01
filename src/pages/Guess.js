@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import guessQuestions from "../data/guessQuestions";
 import "../styles/Quiz.css";
 import AccessibilityPanel from "../components/AccessibilityPanel";
@@ -30,6 +30,11 @@ function Guess({ goToResults, ...accessibilityProps }) {
       goToResults(newAnswers);
     }
   };
+
+  // Takes page back to the top after each question
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentQuestion]);
 
   return (
     <div className="screen">
