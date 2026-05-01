@@ -22,24 +22,36 @@ function Output({
   const isValidIdea = (text) => {
     const trimmed = text.trim();
 
-    const isValidChars = /^[a-zA-Z0-9\s.,'!?+-]+$/;
-    if (!isValidChars.test(trimmed)) return false;
+    if (!trimmed) {
+      return "";
+    }
+
+    if (!/^[a-zA-Z0-9\s.,;:'’`“”!?+\-()—]+$/.test(trimmed)) {
+      return "Please avoid special characters.";
+    }
 
     // Must be at least 10 characters
-    if (trimmed.length < 10) return false;
+    if (trimmed.length < 10) return "Please write at least 10 characters.";
 
     // Must be at least 3 words
-    const words = trimmed.split(/\s+/);
-    if (words.length < 3) return false;
+    if (trimmed.split(/\s+/).length < 3) {
+      return "Please write at least 3 words.";
+    }
 
-    return true;
+    return "";
   };
+
+  const errorMessage = isValidIdea(userIdea);
+  const isValid = userIdea.trim() !== "" && !errorMessage;
 
   // Sends the user's userIdea to the backend and displays generated image
   const handleGenerate = async () => {
-    if (!isValidIdea(userIdea)) {
+    const validationError = isValidIdea(userIdea);
+
+    if (validationError || !userIdea.trim()) {
       setError(
-        "Please type an idea (at least 3 words) or select one of the options above.",
+        validationError ||
+          "Please type an idea or select one of the options above.",
       );
       return;
     }
@@ -187,8 +199,9 @@ function Output({
               placeholder="Type your idea..."
               value={userIdea}
               onChange={(e) => {
-                setUserIdea(e.target.value);
-                setError("");
+                const value = e.target.value;
+                setUserIdea(value);
+                setError(isValidIdea(value));
               }}
             />
 
@@ -201,7 +214,7 @@ function Output({
             <button
               className="btn"
               onClick={handleGenerate}
-              disabled={loading || !isValidIdea(userIdea)}
+              disabled={loading || !isValid}
             >
               Next
             </button>
